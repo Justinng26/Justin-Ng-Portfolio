@@ -1,0 +1,21 @@
+@use "./variables";
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1260px;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+// button{
+//     color: variables.$solidWhite;
+//     background-color: variables.$tertiary;
+//     padding: 15px;
+//     font-size: 1rem;
+//     font-family: variables.$secondaryHeading;
+//     padding-bottom: 5px;
+// }
