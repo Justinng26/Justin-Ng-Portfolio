@@ -2,15 +2,28 @@
 
 .navBar{
     padding: 1px;
-    
+
     ul{
         display: flex;
         list-style: none;
         justify-content: space-evenly;
-    }
 
-    a{
-        margin: -30px;
-    }
+        a{
+            margin: -30px;
 
+                &:hover {
+                    border-bottom: 2px solid variables.$paleWhite
+                    ;
+                }
+
+                &:focus{
+                    border-bottom:2px solid variables.$paleWhite;
+
+                }
+
+                &:active{
+                    border-bottom:2px solid variables.$paleWhite;
+                }
+        }
+    }
 }

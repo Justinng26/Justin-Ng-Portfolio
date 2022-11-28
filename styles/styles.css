@@ -7,9 +7,18 @@
     justify-content: space-evenly;
   }
 
-.navBar a {
-        margin: -30px;
-      }
+.navBar ul a {
+    margin: -30px;
+}
+.navBar ul a:hover {
+    border-bottom: 2px solid #f8f4f3;
+}
+.navBar ul a:focus {
+    border-bottom: 2px solid #f8f4f3;
+}
+.navBar ul a:active {
+    border-bottom: 2px solid #f8f4f3;
+}
 
   footer {
     text-align: center;
