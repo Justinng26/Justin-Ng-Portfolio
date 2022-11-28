@@ -19,6 +19,16 @@ p{
     font-family: 'Lora', serif ;
 }
 
-h1, header p, h3, ul a{
+h1, header p, h3, ul a, footer p{
     color: variables.$paleWhite;
+}
+
+h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+h5{
+    font-family: 'Roboto', sans-serif;
+    color: variables.$primary;
 }

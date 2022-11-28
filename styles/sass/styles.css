@@ -44,13 +44,12 @@ footer {
   display: flex;
   justify-content: space-between;
   text-align: initial;
-  flex-wrap: wrap;
 }
 
 .project {
   background: white;
   width: 50%;
-  margin: 0 20px;
+  margin: 0 30px;
 }
 
 .projectImage img {
@@ -80,6 +79,13 @@ footer {
 
 .contact {
   background: #b6caa2;
+}
+
+.contactFont {
+  font-size: 30px;
+}
+.contactFont i {
+  margin: 0 30px;
 }
 
 html {
@@ -344,6 +350,47 @@ p {
   font-family: "Lora", serif;
 }
 
-h1, header p, h3, ul a {
+h1, header p, h3, ul a, footer p {
   color: #f8f4f3;
+}
+
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  color: #365c46;
+}
+
+@media (max-width: 1021px) {
+  .projectInfo button {
+    padding: 10px 35px;
+  }
+}
+@media (max-width: 977px) {
+  .projectInfo button {
+    padding: 10px 30px;
+  }
+}
+@media (max-width: 933px) {
+  .projectInfo button {
+    padding: 10px 25px;
+  }
+}
+@media (max-width: 885px) {
+  .projectInfo button {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 843px) {
+  .projectInfo button {
+    padding: 10px 150px;
+  }
+}
+@media (max-width: 799px) {
+  .projectInfo button {
+    padding: 10px;
+  }
 }/*# sourceMappingURL=styles.css.map */
