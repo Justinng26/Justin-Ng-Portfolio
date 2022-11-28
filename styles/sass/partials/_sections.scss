@@ -1,6 +1,6 @@
 @use "./global/variables";
 
-// about section
+// about section  /projects
 
 .aboutImgContainer{
     img{
@@ -8,4 +8,24 @@
         margin-right: auto;
         border-radius: 50%;
     }
+}
+
+.about, .projects{
+    background: variables.$paleWhite;
+}
+
+// skills  /footer
+
+.skills, footer{
+    background: variables.$primary;
+}
+
+footer{
+    padding: 1px;
+}
+
+// contact
+
+.contact{
+    background: variables.$tertiary;
 }

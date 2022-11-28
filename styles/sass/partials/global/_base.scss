@@ -5,7 +5,7 @@
     margin: 0 auto;
     max-width: 1260px;
     text-align: center;
-    padding: 100px;
+    padding: 70px;
     
 }
 
@@ -14,11 +14,9 @@ img{
     display: block;
 }
 
-// button{
-//     color: variables.$solidWhite;
-//     background-color: variables.$tertiary;
-//     padding: 15px;
-//     font-size: 1rem;
-//     font-family: variables.$secondaryHeading;
-//     padding-bottom: 5px;
-// }
+button{
+    background-color: variables.$secondary;
+    padding: 10px 40px;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}

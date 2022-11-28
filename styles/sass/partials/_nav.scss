@@ -1,6 +1,8 @@
 @use './global/variables';
 
 .navBar{
+    padding: 1px;
+    
     ul{
         display: flex;
         list-style: none;

@@ -1,3 +1,6 @@
+.navBar {
+  padding: 1px;
+}
 .navBar ul {
   display: flex;
   list-style: none;
@@ -8,7 +11,7 @@
 }
 
 header {
-  background-image: url(../../../assets/background.img);
+  background-image: url(../../../assets/background.img2.avif);
   height: 60vh;
   background-position: center;
   background-size: cover;
@@ -22,6 +25,22 @@ footer {
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
+}
+
+.about, .projects {
+  background: #f8f4f3;
+}
+
+.skills, footer {
+  background: #365c46;
+}
+
+footer {
+  padding: 1px;
+}
+
+.contact {
+  background: #b6caa2;
 }
 
 html {
@@ -252,7 +271,7 @@ html {
   margin: 0 auto;
   max-width: 1260px;
   text-align: center;
-  padding: 100px;
+  padding: 70px;
 }
 
 img {
@@ -260,14 +279,32 @@ img {
   display: block;
 }
 
+button {
+  background-color: #db9999;
+  padding: 10px 40px;
+  font-size: 0.9rem;
+  font-family: "Roboto", sans-serif;
+}
+
 html {
   font-size: 125%;
 }
 
-ul a, h1, h2, h3 {
+h1, h2, h3 {
   font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+}
+
+ul a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
 }
 
 p {
   font-family: "Lora", serif;
+}
+
+h1, header p, h3, ul a {
+  color: #f8f4f3;
 }/*# sourceMappingURL=styles.css.map */
