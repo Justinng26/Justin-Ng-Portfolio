@@ -1,1 +1,8 @@
 @use "./global/variables";
+
+header{
+    background-image: url(../../../assets/background.img);
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}

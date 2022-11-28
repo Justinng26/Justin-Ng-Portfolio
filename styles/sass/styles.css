@@ -3,9 +3,25 @@
   list-style: none;
   justify-content: space-evenly;
 }
+.navBar a {
+  margin: -30px;
+}
+
+header {
+  background-image: url(../../../assets/background.img);
+  height: 60vh;
+  background-position: center;
+  background-size: cover;
+}
 
 footer {
   text-align: center;
+}
+
+.aboutImgContainer img {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
 }
 
 html {
@@ -236,10 +252,22 @@ html {
   margin: 0 auto;
   max-width: 1260px;
   text-align: center;
-  padding: 75px;
+  padding: 100px;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+html {
+  font-size: 125%;
+}
+
+ul a, h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-family: "Lora", serif;
 }/*# sourceMappingURL=styles.css.map */
