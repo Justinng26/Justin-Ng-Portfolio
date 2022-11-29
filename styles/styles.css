@@ -349,6 +349,7 @@ footer {
 
   p {
     font-family: "Lora", serif;
+    line-height: 1.7;
   }
 
   h1, header p, h3, ul a, footer p{
@@ -383,20 +384,60 @@ footer {
     }
   }
 
-  @media (max-width: 885px) {
+  @media (max-width: 889px) {
     .projectInfo button {
       padding: 10px 20px;
     }
   }
 
-  @media (max-width: 843px) {
+  @media (max-width: 844px) {
     .projectInfo button {
       padding: 10px 15px;
     }
   }
 
-  @media (max-width: 799px) {
+  @media (max-width: 800px) {
     .projectInfo button {
       padding: 10px;
+    }
+  }
+
+  @media (max-width: 755px) {
+    .projectInfo button {
+      padding: 5px;
+    }
+  }
+
+  @media (max-width: 711px) {
+    .projectsFlex {
+      flex-wrap: wrap;
+    }
+    .project {
+      width: 100%;
+      margin: 20px 30px;
+    }
+  }
+
+  @media (max-width:550px){
+    .project{
+      margin: 20px 5px;
+    }
+  }
+
+  @media (max-width: 484px) {
+    .contactFont {
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 464px) {
+    .contactFont {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 434px) {
+    .project {
+      margin: 20px 0;
     }
   }
