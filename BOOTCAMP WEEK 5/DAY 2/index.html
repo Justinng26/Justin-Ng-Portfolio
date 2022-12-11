@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="movieGenres">
+
+    </ul>
+
+    <script>
+        const genres = ["Horror", "Comedy", "Drama", "Action", "Suspense", "Documentary"];
+
+        const ulElement = document.querySelector('.movieGenres');
+
+
+        // That is to say, it would be nice if there was some function we could call, which would loop through the array automatically for us, and for each iteration of the array, execute some callback function for us.
+        // this function exists, it is built into all arrays, as a method. It is called forEach, 
+        // .foreach DOESN'T give anything back
+
+        genres.forEach((genreString) => {
+            const newLiElement = document.createElement('li')
+            newLiElement.textContent = genreString;
+             ulElement.append(newLiElement);
+         
+        });
+
+        // ===
+
+        //  for (let i =0; i < genres.length; i++);
+        //     console.log()
+
+        //  for (let i = 0; i < genres.length; i++){
+        //      ('li');
+             
+
+// Using our for loop like this totally works, but it... also kind of sucks? Like, it's not the end of the world, but it's very fussy, yknow?
+// Specifically, we want to worry about how to get our elements on the page, but to use a for loop, we have to deal with a bunch of other little details:
+//      - HOW do we loop? Like, we have to tell it to start at 0, and then tell it to stop one before reaching the length of the array, and tell it to count up one at a time.
+//      - Instead of just saying "the current array item", we have to go `genres[i]`, which works fine, but looks kind of ugle, and also always takes the human mind a moment to parse. Like, you have to read it and go "ok, so we have genres, the array, then we are going into it to get... i? Oh right that's a number, that indicates the index we're on... k so that's the current item in our array...".
+// All this to say, we have to get bogged down into details about HOW our loop will run, and then using that logic to access the data we want IN the loop ends up being a messy product OF the loop (i) etc etc.
+//
+// It would be preferable, if instead of this, we could just write some code that says "hey, that array? Yeah, loop through it, and for each element in it, please execute some code for me." ... without worrying about those other details!
+// That is to say, it would be nice if there was some function we could call, which would loop through the array automatically for us, and for each iteration of the array, execute some callback function for us.
+
+const bigNumbers = [10, 100, 25, 20];
+
+// we want a new set of numbers, with half of each of the original values, like [5,50,12.5,10]
+// .map RETURNS back new array with new item from original array
+
+const newArray = bigNumbers.map( (currentNumber) => {
+    return currentNumber / 2;
+});
+
+// console.log (newArray);
+
+const persons = [
+  {first: 'Beatriz', last: 'Ribeiro'},
+  {first: 'Magdalena', last: 'Kowalczyk'},
+  {first: 'Hu', last: 'Lanfen'}
+];
+
+// want an array of three strings eg "Beatriz Ribeiro"
+
+ const namesArray = persons.map( (individualObject) => {
+    return `${individualObject.first} ${individualObject.last}`;
+ });
+
+//  console.log(namesArray);
+
+const citizens = [
+  { name: 'Durao', age: 16 },
+  { name: 'Mirai', age: 25 },
+  { name: 'Remy', age: 90 },
+  { name: 'Palesa', age: 9 }
+];
+
+// we want a new array that only contains those citizens who are 18 or older.
+// Filter DOESN'T mutate the data(unlike .map), can only narrow down to a subset of the original. eg. a built in 'if' statement. 
+
+ const voters = citizens.filter( (personObject) => {
+    return personObject.age >= 18;
+
+ }); 
+
+console.log(voters);
+
+
+    </script>
+
+
+</body>
+</html>

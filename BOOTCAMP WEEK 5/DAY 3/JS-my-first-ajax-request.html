@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My first AJAX request</title>
+</head>
+<body>
+
+	<h1>Open up your console to see how the request went. 👀</h1>
+
+	<p class="nextDeparture">Data will go here!</p>
+  
+<script>
+
+const url = new URL ('https://www.septastats.com/api/current/system/latest')
+
+
+// more logical/quicker/ easier to read way to add parameters to the URL.
+url.search = new URLSearchParams({
+  q:"coffee",
+  api_key: "6h6j6j",
+  param3:"hello world",
+})
+
+
+  fetch(url)
+  .then(function(response){
+    return response.json();
+    // parse the data for the first time
+  })
+
+// jsonResults == response
+// parse the data again to get access to it.
+  
+
+.then(function(jsonResults){
+    console.log (jsonResults.data);
+
+    const route = jsonResults.data[0].id;
+    const startStation = jsonResults.data[0].source;
+    const endStation = jsonResults.data[0].dest;
+    const minsLate = jsonResults.data[0].late;
+
+
+
+    const paragraphEl = document.querySelector('p.nextDeparture');
+    paragraphEl.innerHTML = `The ${route} train from ${startStation} to ${endStation} is running ${minsLate} minutes late.`
+  });
+</script>
+</body>
+</html>
+
+<!--  structure to use for all API calls -->
+const url = new URL('whateverapi.com');
+
+//optional param option:
+url.search = new URLSearchParams({
+  property: 'value',
+  apikeymaybe: 'somevalue'
+});
+
+fetch(url)
+.then(response => {
+ response.json()
+})
+.then(data => {
+  console.log(data)
+})

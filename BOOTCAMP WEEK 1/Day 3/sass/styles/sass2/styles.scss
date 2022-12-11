@@ -1,0 +1,51 @@
+@use "setup";
+
+$mainColor: lightcoral;
+$secondaryColor: blue;
+
+body{
+    background: $mainColor;
+}
+
+h1{
+    color: $secondaryColor;
+}
+
+.special{
+    border: 1px solid $mainColor;
+}
+
+main{
+    border: 5px dotted $secondaryColor;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+
+    li{
+         list-style: none;
+    margin: 10px 20px;
+    border: 2px dotted green;
+
+        a {display: inline-block;
+        padding: 30px;
+        
+
+        &:hover{
+            background: $maincolor;
+             }
+        }
+    }
+ }
+
+ @media (max-width: 800px)
+ .nav li a:hover{
+    background: black;
+ }
+
+
+
+
+
+

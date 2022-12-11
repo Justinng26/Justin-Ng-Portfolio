@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  display: flex;
+}
+
+.card {
+  margin: 8px;
+  padding: 5px;
+  border: 2px solid #77562b;
+  /* The card is a flex child AND a flex parent! */
+  /* Flex CHILD properties: */
+  flex: 0 0 150px;
+  /* Flex PARENT properties: */
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  margin: 0;
+  padding: 5px;
+  background: #6d976d;
+  /* Flex grow makes the p expand into any available space: */
+  flex-grow: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <p>Lorem ipsum dolor sit.</p>
+          <button>Ooh, a button</button>
+        </div>
+        <div class="card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, laboriosam, pariatur animi sapiente earum autem fugit ducimus incidunt dolorem a, consectetur sit!</p>
+          <button>Ooh, a button</button>
+        </div>
+        <div class="card">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <button>Ooh, a button</button>
+        </div>
+        <div class="card">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button>Ooh, a button</button>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* box1 and box2 scale to the parent */
+        section{ width: 100%;}
+        .box1 {
+            background: palegreen;
+            width: 200px;
+            font-size: 50px;
+            height: 200px;
+        }
+
+        .box1 p {
+            font-size: 10%;
+        }
+
+        .box2 {
+            background: palevioletred;
+            width: 100%;
+            height: 90px;
+        }
+        .box3{
+            background: paleturquoise;
+            width: 2000px;
+            height: 150px;
+        }
+        
+        .box4{
+            background: lightslategray;
+            width: 500px;
+            height: 200px;
+        }
+        .box4-child{
+            background: darkmagenta;
+            height: 100%;
+        }
+
+        .parentBox {
+  border: 6px dashed chartreuse;
+  width: 400px;
+  text-align: center;
+}
+
+.childBox1{
+  background-color: lightblue;
+}
+
+.childBox2{
+  background-color: chocolate;
+  min-height: 100px;
+}
+
+.childBox3{
+  background-color: yellow;
+  min-height: 100px;
+}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box1">
+            <p> I'm first</p>
+        </div>
+        <div class="box2">
+            <p> I'm second</p>
+        </div>     
+      
+    </section>
+    <section>
+        <div class="box1">
+            <p>I'm first!</p>
+        </div>
+        <div class="box2">
+            <p>I'm second!</p>
+        </div>
+        <div class="box3">
+            <p>I'm third!</p>
+        </div>
+        <div class="box4">
+                <div class="box4-child">
+
+            </div>
+            <p>I'm fourth!</p>
+        </div>
+    </section>
+
+    <section class="parentBox">
+        <div class="childBox1">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, facilis!</p>
+        </div>
+        <div class="childBox2">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, facilis!</p>
+        </div>
+      <div class="childBox3">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maxime veniam quod laborum itaque esse temporibus consequatur eaque laboriosam nulla obcaecati libero dolorum quo velit neque, provident exercitationem. Suscipit saepe placeat id voluptate, necessitatibus cupiditate est neque numquam perspiciatis soluta laudantium, cumque tempora animi. Velit nobis eos enim sunt. Neque eveniet placeat, quos repellat officia, libero rerum esse illum quisquam consequuntur numquam, debitis facere voluptatum aspernatur sed voluptates enim fugit eos eaque ea nobis ad? Eligendi cum blanditiis culpa animi excepturi? Illum natus assumenda provident unde autem aliquam animi, aspernatur officia esse, veniam a molestiae saepe accusantium quibusdam explicabo ullam, necessitatibus cumque dolor totam sequi doloribus ipsa reprehenderit. Pariatur labore hic provident nemo at, aspernatur beatae dolor laborum! Totam consequatur modi nobis magnam asperiores amet quas error! Culpa quo dolore corrupti quis, corporis totam pariatur non voluptatem, voluptates exercitationem provident vel. Facere, veniam. Quasi, alias error aspernatur molestiae magnam maiores facere fugit eius itaque eos eaque repudiandae accusantium quia numquam laboriosam! Corrupti, doloribus deserunt. Accusamus, neque molestias sed impedit dolorum suscipit iste voluptas aliquam ea. Nemo ipsa dolor doloremque commodi eligendi temporibus perspiciatis explicabo modi voluptatem, recusandae ipsam voluptates sunt iure tempora dolores architecto deserunt molestiae! Voluptas nam error impedit.</p>
+        </div>
+    </section>
+</body>
+</html>

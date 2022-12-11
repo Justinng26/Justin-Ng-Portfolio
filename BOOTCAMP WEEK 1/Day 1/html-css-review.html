@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏗 HTML and CSS 🎨 Review</title>
+
+    <!-- 1A. Where are the three places CSS can be included within HTML? Why might you choose one over the other? -->
+
+    head, inline the element, external 
+
+    <!-- 1B. Is there any code all stylesheets should include? If your page is missing it, please include it below. -->
+
+        setup, general styles, 
+
+    <style>
+        h1 {
+            font-style: italic;
+        }
+
+        .gallery {
+            display: flex;
+            padding: 20px;
+            border: 10px dashed chartreuse;
+            min-height: 600px;
+        }
+
+        .stylizedHeading {
+            padding: 40px;
+            background-color: goldenrod;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .team {
+            padding: 25px;
+            background-color: teal;
+        }
+
+        .employee h3 {
+            padding: 10px;
+            background-color: yellowgreen;
+        }
+
+        .trying-to-keep-order {
+            margin: 50px auto;
+            width: 600px;
+            height: 400px;
+            background: skyblue;
+            text-align: center;
+        }
+
+        .wild-and-free {
+            width: 600px;
+            height: 300px;
+            background-color: seagreen;
+            padding: 20px;
+            border: 5px solid firebrick;
+        }
+
+        footer {
+            height: 50%;
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 2. Are there are any issues with the element below? If yes, please make any necessary updates according to HTML/CSS best practices. -->
+    <h1 style="font-style: normal; font-weight: lighter;">This is the title</h1>
+
+    style attributes should be in css 
+
+
+
+
+    <!-- 3. What is wrong with this code snippet? -->
+    <a href="https://www.legibility.com">
+        <h1></h1>The Title</h1>
+    </a>
+    <ul><a href="">
+            <li>This is the first link</li>
+        </a>
+        <li>
+            There is another link<a>Link Here</a>
+        </li>
+    </ul>
+
+    too many h1 tags, not aligned properly, li should be under the ul 
+
+     bottom tag has no anchor tag 
+
+
+
+
+    <!-- 4. Is there a more meaningful way to structure this portion of the page? -->
+    <div class="main">
+        <div class="about">A distinct piece of the page which will tell users about the site.</div>
+        <div class="contact">A distinct piece of the page which will detail contact information.</div>
+    </div>
+
+    use 'main' instead of div, use a wrapper, wrap the text in a p, maybe include id as well 
+
+
+
+
+    <!-- 5A. There is a lot of extra vertical whitespace within this gallery (more than the 20px of padding we've added to the gallery.) Open the Dev Tools within your browser to determine what is causing this space and make any necessary updates to the code to remove it. -->
+
+    because of the min-width
+
+    <!-- 5B. Position the images so they are laid out in a single vertical column. They should also be aligned to the left side of the gallery container and be vertically centered. -->
+    <section class="gallery">
+        <figure>
+            <img src="http://placecorgi.com/150" alt="a majestic corgi" />
+        </figure>
+        <figure>
+            <img src="http://placecorgi.com/150" alt="a majestic corgi" />
+        </figure>
+        <figure>
+            <img src="http://placecorgi.com/150" alt="a majestic corgi" />
+        </figure>
+    </section>
+
+
+
+
+    <!-- 6. Taking accessibility and semantic HTML best practice into account, are there any updates which should be made to this form markup? -->
+    <form action="submit">
+        <input type="text" name="firstName" placeholder="First name here">
+
+        <input type="text" name="lastName" placeholder="Last name here">
+
+        <p>Select your bear size:</p>
+
+        <input type="radio" name="bearSize" value="baby" id="babyOption" checked="true">
+
+        <input type="radio" name="bearSize" value="mama" id="mamaOption">
+
+        <input type="radio" name="bearSize" value="other" id="otherOption">
+
+        <button type="submit">Submit my bear choice!</button>
+    </form>
+
+    should include labels 
+    can't select sizes 
+    value should be in the 'name'
+
+
+
+
+    <!-- 7. Update the CSS so that this site follows a "mobile-first" responsive design strategy. Namely, the body background-color at screens smaller than 600px should be lightcyan. Any screens larger than that should have a body background-color of cadetblue. -->
+
+
+
+
+    <!-- 8A. What is the difference between a block-level element and an inline element? When would you use one over the other? -->
+
+    <!-- 8B. Inspect the element below. Currently, the background-color on the span is overflowing onto the element above it. How can we use the display property to ensure this background does not overlap the element before it? -->
+    <h3>The important part of the headline <span class="stylizedHeading">is right here</span></h3>
+
+
+
+
+    <!-- 9. Where are the following images looking for their file? -->
+    <img src="../assets/hello.jpg">
+    <img src="./assets/hello.jpg">
+    <img src="../../images/hello.jpg">
+
+
+
+
+    <!-- 10. Currently the h3s appear below the images. Style them so that they appear on the bottom right of the image (like an overlapping label.) -->
+    <section class="team">
+        <div class="employee">
+            <img src="http://placekitten.com/200" alt="a curious cat">
+            <h3>Poirot</h3>
+        </div>
+        <div class="employee">
+            <img src="http://placekitten.com/200" alt="a curious cat">
+            <h3>Poirot</h3>
+        </div>
+    </section>
+
+    <!-- 11. What are the 4 parts that comprise the CSS Box Model for HTML elements?  -->
+
+    <!-- 12. What is the height of the following section? -->
+    <section class="guess-my-height"></section>
+
+    <!-- 13. Our next section seems to be having a problem with the size of its child div. Why is this happening? Is there a CSS property that would fix our problem? -->
+    <section class="trying-to-keep-order">
+        <p>I am trying to maintain order!</p>
+        <div class="wild-and-free">
+            <p>Nothing can contain my power!</p>
+        </div>
+    </section>
+
+    <!-- 14. Our footer has CSS applied to it that makes its height 50%, but the element isn't growing. Why is the current CSS not changing our footer's height? What can we do to ensure that the footer is 50% of the browser's height?  -->
+    <footer>
+        <h2>An amazing footer section, wow!</h2>
+        <nav>
+            <h3>Footer navigation links, that's a great touch for this site!</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

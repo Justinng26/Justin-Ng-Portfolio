@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title title>Food Ahoy - ANSWER</title>
+  <link href='https://fonts.googleapis.com/css?family=Rubik:700|Work+Sans' rel='stylesheet' type='text/css'>
+  <style>
+
+    * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #005EFEA1;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 64px;
+    }
+
+    .wrapper {
+      max-width: 1080px;
+      padding: 25px;
+      margin: 50px auto;
+      background: #FDFDFD;
+      box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    ul.inventory {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    ul.inventory li {
+      width: 22%;
+      padding: 25px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      margin: 25px 0;
+    }
+
+    select {
+      font-family: 'Work Sans', sans-serif;
+      width: 350px;
+      -webkit-appearance: none;
+      padding: 14px 10px;
+      font-size: 21px;
+      border: 2px solid black;
+      border-radius: 0;
+    }
+
+    input[type=submit] {
+      font-family: 'Work Sans', sans-serif;
+      background: black;
+      border: 0;
+      font-size: 24px;
+      color: white;
+      padding: 15px 50px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:focus {
+      outline: 0;
+    }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <h1>Food Ahoy</h1>
+
+    <form>
+      <select>
+        <option value="burgers">Burger</option>
+        <option value="hotdogs">Hot Dog</option>
+        <option value="fries">Fries</option>
+        <option value="poutines">Poutine</option>
+      </select>
+      
+      <input type="submit" value="Order" />
+    </form>
+
+    <h2>Inventory</h2>
+    
+    <ul class="inventory"></ul>
+  </div>
+
+<script>
+
+  const app = {};
+
+  app.inventory = {
+    burgers: 10,
+    hotdogs: 15,
+    fries: 100,
+    poutines: 25
+  }
+
+  app.displayItems = function() {
+    for (let item in app.inventory) {
+      let element = document.createElement('li')
+      element.innerHTML = `We have ${app.inventory[item]} ${item}`;
+      app.ul.appendChild(element);
+    }
+  }
+
+  app.changeInventory = function() {
+    app.form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let product = document.querySelector('select').value;
+      app.inventory[product] = app.inventory[product] - 1;
+      app.ul.innerHTML = '';
+      
+      app.displayItems();
+    })
+  }
+
+  app.init = function() {
+    app.form = document.querySelector('form');
+    app.ul = document.querySelector('ul.inventory');
+    app.displayItems();
+    app.changeInventory();
+  }
+
+  app.init();
+
+</script>
+</body>
+</html>

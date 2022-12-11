@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let twitter = "@differentHandle"
+
+        // app is an object, able to scope properties to 'app' without conflict with the global scope. Or variables with the same name. 
+        const app = {};
+
+        app.twitter = "@twitterHandle";
+        app.userName = "justin";
+        app.followers = "420"
+
+        app.getUserName = () => {
+            console.log(app.userName)
+        };
+        // joes namespace - all the properties are scoped to the joeApp object. 
+        const joeApp ={};
+        joeApp.twitter ="@joeiscool"
+        console.log(joeApp.twitter, app.twitter)
+
+        // this init method will be the first method to run on page load.
+        // will kick off all other functions that need to start.
+        app.init = () => {
+            console.log('ready to go!');
+            app.getUserName();
+        }
+
+        app.init()
+
+    </script>
+</body>
+</html>

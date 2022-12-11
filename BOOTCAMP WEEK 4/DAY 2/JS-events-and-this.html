@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Events and this</title>
+  <style>
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .box1 {
+    background:#A9D4C5;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+
+  .box2 {
+    background:#DCE4D1;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+  <main>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </main>
+
+  <script>
+
+    const box1 = document.querySelector('.box1');
+    const box2 = document.querySelector('.box2');
+
+    const boxGoByeBye =function( event ) {
+       event.target.style.display = "none";
+      console.log( event )
+    }
+
+    box1.addEventListener('click',boxGoByeBye);
+
+    box2.addEventListener('click',boxGoByeBye);
+
+  </script>
+</body>
+</html>
+
+// This is EFFECTIVELY a model of the logic that we are working with here:
+const elementFromPage = {
+  // .. all kinds of shit in here
+  
+  addEventListener: function(thingToListenFor, whatToDo) {
+      // The logic in here is BASSICALLY the fancy equivalent of:
+      if (thingToListenFor === true) {
+          // Create a new object with all kinds of details about the event!
+          const eventDeets = {
+            // .. all kinds of properties about the event, like WHERE it happened, WHAT happened etc
+            target: // Here it puts the element where the event was heard
+          }
+
+          whatToDo(eventDeets);
+      }
+  }
+
+  // ... wow so much shit in here
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+	<title>CSS CSI</title>
+	<style>
+
+		/* 
+		Just a bunch of styling to set up our page to start. Nothing more to see here, folks. 
+		Keep scrolling 😄 
+		*/
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			font-family: Vollkorn, serif;
+		}
+
+		p {
+			margin: 20px 0;
+		}
+
+		h3 {
+			margin-bottom: 20px;
+		}
+
+		header {
+			background-image: url(joao-silas-unsplash.jpg);
+			background-position: center;
+			background-size: cover;
+			padding: 300px;
+			text-shadow: 2px 2px black;
+			color: mintcream;
+		}
+
+		section {
+			padding: 150px 250px;
+			background-color: mintcream;
+		}
+	
+		.header-container {
+			background: rgba(255, 255, 255, .2);
+			padding: 100px;
+		}
+
+		.information p {
+			padding: 10px;
+		}
+
+		.show-statistics {
+			background-color: purple;
+		}	
+
+		.show-statistics h3,
+		.show-statistics p {
+			color: mintcream;
+		}
+
+		footer {
+			padding: 20px;
+			background-color: black;
+			text-align: center;
+		}
+
+
+
+		/* WHERE THE FUN STARTS: */
+
+		/*
+		There are some styles in this stylesheet that are not applying to the page properly. Go through each one and see if you can uncover the problem. 
+		*/
+
+		
+		/* 
+		The font-size of this h1 should be 65px, but it's not applying properly. Without changing the selector, make this rule apply. Which of three CSS concepts is causing this problem?
+		*/ 
+
+		h1 {
+			font-size: 65px;
+		}
+
+		
+		h2,
+		h3 {
+			font-size: 32px;
+		}
+
+		/*
+		Now that we've fixed the font-size of the h1, we can see that the following rule is no longer applying properly and the magnifying glass is way too big. What's wrong with the following selector?
+		*/
+
+		.magnifying-glass {
+			margin-right: 10px;
+			font-size: 40px;
+		}
+
+
+		/* 
+		The following rule block is not applying. Can you figure out what's wrong with this selector?
+		HINT: take a look at the HTML markup.
+		*/
+
+		h5 {
+			margin-top: 20px;
+			font-size: 18px;
+			font-style: italic;
+		}
+
+		/* 
+		The list-style property changes the little dots beside each list item. A list-style value of none removes the dots entirely. Can you fix this selector to make the style apply?
+		*/
+
+		 ul li{
+			list-style: none;
+		}
+
+
+		/* 
+		The following rule is not applying to the paragraphs with a class of fact. Correct this selector to fix the problem. 
+		*/
+
+		p.fact {
+			font-size: 24px;
+		}
+
+		/*
+		Write a new rule so that applies the background color slategray to the background of the paragraph elements in the information section AND the background of the entire section with a class of show-statistics.
+		*/
+		.information p, .show-statistics {
+			background-color: darkslategray;
+
+		}
+
+		/* 
+		Replace the blank with the selector that will target the paragraph element in the footer 
+		*/
+		___footer p, a______ {
+			color: white;
+		}
+
+		/* 
+		Anchor tags do not naturally accept properties through inheritance. Because of this you'll need to explicitly state that the anchor tag should be white. Change the previous rule to accomplish this. 
+		*/
+
+		/* 
+		BONUS: Write a new rule that removes the underline on the anchor tag and makes it bold. You may want to look online for help.
+		*/
+
+		
+
+	</style>
+</head>
+<body>
+
+	<!-- header start -->
+	<header>
+		<div class="header-container">
+			<!-- &#128269 is a unicode emoji symbol -->
+			<h1><span class="magnifying-glass">&#128269</span>CSS CSI</h1>
+			<h2>Get to the bottom of it</h2>
+			<p class="fact">There are mysteries the world abound, and CSS is no exception. Can you because a CSS CSI?</p>
+		</div>
+	</header>
+	<!-- header end -->
+
+	<!-- main start -->
+	<main>
+		<!-- information section start -->
+		<section class="information">
+			<h3><span class="magnifying-glass">&#128269</span>Did You Know?</h3>
+			<ul>
+				<li>
+					<h4>Fingerprints Aren't Foolproof</h4>
+					<p>Fingerprints are <span>almost</span> entirely unique to each individual in the world. However, there have been cases where the wrong person has gone to trial all based on an incorrectly matched fingerprint. Fingerprints are so intricate and variable, it takes incredible training and expertise to be able to identify a match.</p>
+				</li>
+				<li>
+					<h4>Teeth are Trustworthy</h4>
+					<p>Dental records are responsible for identifying 93% of human remains. Bones are incredibly resilient, and all humans have a completely unique dental imprint.</p>
+				</li>
+				<li>
+					<h4>Deleted Computer Files Aren’t Always Gone</h4>
+					<p>Savvy forensic scientists may be able to find evidence that’s been deleted from a computer. Every time you "delete" a file from a computer, the file is simply set aside, hidden, and marked as data waiting to be rewritten. So keep that in mind next time you're trying to delete your sensitive information!</p>
+				</li>
+			</ul>
+		</section>
+		<!-- information section end -->
+
+		<!-- section show statistics start -->
+		<section class="show-statistics">
+			<h3><span class="magnifying-glass">&#128269</span>CSI: The Show</h3>
+			<ul>
+				<li>
+					<p class="fact">The set of the show CSI was once broken into, and in an ironic twist, the thieves were never caught.</p>
+				</li>
+				<li>
+					<p class="fact">CSI: Crime Scene Investigation was the highest rated new show in 2000-2001.</p>
+				</li>
+				<li>
+					<p class="fact">There was <span>almost</span> a CSI Toronto but the show makers decided 3 was enough.</p>
+				</li>
+			</ul>
+		</section>
+		<!-- section show statistics end -->
+	</main>
+	<!-- main end -->
+
+	<!-- footer start  -->
+	<footer>
+		<p>To learn about CSI, check out <a href="https://en.wikipedia.org/wiki CSI:_Crime_Scene_Investigation">this link</a>!</p>
+	</footer>
+	<!-- footer end -->
+
+</body>
+</html>

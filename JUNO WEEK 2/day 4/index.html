@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="wrapper">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="blog"></a></li>
+                <li><a href="bios">Meet The Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- header -->
+
+    <header>
+        <div class="wrapper">
+            <h1>Hello World</h1>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section id="about" class="about">
+            <div class="wrapper">
+                    <h2>About Us</h2>
+
+                    <div class="flexContainer">
+
+                        <div class="imgContainer">
+                            <img src="https://placekitten.com" alt="adorable kitten">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quam quaerat, natus minus a quia beatae doloremque est id, deleniti, modi iste sunt iure voluptate cupiditate culpa voluptas tempora alias?</p>
+                    </div>        
+            </div>
+           
+        </section>
+
+        <!-- Contact us  -->
+        <section class="contact" id="contact">
+            <div class="wrapper">
+                <!-- My Form -->
+                <form action="#" method="post" class="contactForm" name="contactForm">
+                    <!-- input and label used together, 'for' has to be the same as the 'id' attribute in input. -->
+                   
+                    <label for="firstName" > First Name</label>
+                     <input type="text" id="firstName">
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Lofranco">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="jane.doe@gmail.com" required>
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone">
+
+                    <label for="password">Password</label>
+                    <input type="text" id="password">
+
+                    <!-- Radio button with field set -->
+                    <fieldset>
+                        <legend>Pizza Size</legend>
+
+                        <label for="small">Small Pizza</label>
+                        <input type="radio" id="small" name="pizzaSize" value="small">
+
+                        <label for="medium">Medium</label>
+                        <input type="radio" id="medium" name="pizzaSize" value="medium">
+
+                        <label for="large">Large</label>
+                        <input type="radio" id="large" name="pizzaSize" value="large">
+                    </fieldset>
+<!-- name and value is the info that gets sent off -->
+                    <fieldset>
+                        <legend>Toppings</legend>
+
+                        <label for="pepperoni">Pepperoni</label>
+                        <input type="checkbox" id="pepperoni" name="topping" value="pepperoni" checked>
+
+                        <label for="sundriedTomatoes">Sun Dried Tomatoes</label>
+                        <input type="checkbox" id="sundriedTomatoes" name="topping" value="sundriedTomatoes">
+
+                        <label for="spinach">Spinach</label>
+                        <input type="checkbox" id="spinach" name="topping" value="spinach">
+                    </fieldset>
+
+                    <label for="juiceBox">Juices</label>
+                    <select name="juiceBox" id="juiceBox" class="dropDown">
+                        <option value="" selected required disabled >Pick your Juice here</option>
+                        <option value="grapple">Grape-Apple</option>
+                        <option value="apple">Apple</option>
+                        <option value="orange">Orange</option>
+                        <option value="fiveAlive">Five-Alive</option>
+                    </select>
+
+                    <label for="close">X</label>
+                        <input type="checkbox" id="close" name="menuClose" value="close" class="menuClose">
+
+                    <label for="textarea">Add your Comment here:</label>
+                    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+
+                    <button type="submit">Click Here</button>
+                    <button type="reset">reset</button>
+                </form>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Copyright Juno College 2022</p>
+    </footer>
+    
+</body>
+</html>

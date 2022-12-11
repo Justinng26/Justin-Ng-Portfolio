@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const car = {
+              wheels: 4,
+              colour: "red",
+              convertible: true,
+              make: "Honda", 
+              model: "civic",
+              doors: 6, 
+              owner: {
+                name: "Joe",
+                yearsOwned: 20,
+                goodDriver: true
+              } 
+        }
+
+        console.log(car)
+
+        // accessing property values
+        console.log(car.make)
+        console.log(car["make"])
+
+        //changing the value
+        car.doors = 4
+        car["doors"] = 4
+        console.log(car.doors)
+
+        // adding properties, add more than 1 at a time
+        car.cupholders = 6
+        car.ac = true
+        car.mileage = "good"
+        console.log(car)
+
+        // add existing property
+        let material = "leather"
+        car.seats = material
+
+        // LOOP
+
+       const clothing = {
+        socks: 34,
+        shoes: 10,
+        pants: 10
+       }
+    //    item = socks,shoes etc.
+
+       for (let item in clothing) {
+        console.log(item)
+       }
+       item = "socks"
+       item = "shoes"
+       item = "pants"
+       item = "first shoe"
+
+       //
+
+       for (let item in clothing) {
+        console.log(clothing[item])
+       }
+
+       for (let item in clothing) {
+    consol.log(`i have ${clothing[item]} ${item}`)
+       }
+
+       'I have 34 socks'
+       'I have 10 shoes'
+       'I have 10 pants'
+
+       const myArray =["cake", "pizza", "cookies", "lettuce", "apple", "pie"]
+
+       console.log(myArray.length)
+    </script>
+</body>
+</html>

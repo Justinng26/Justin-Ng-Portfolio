@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <style>
+    article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+    * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+    body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    main {
+      padding: 30px;
+      margin-bottom: 30px;
+      font-size: 21px;
+      font-weight: 200;
+      line-height: 2.1;
+      background-color:#deebe7;
+    }
+
+    .container {
+      max-width: 750px;
+      padding: 0 15px;
+      margin: auto;
+    }
+
+    header {
+      padding-bottom: 10px;
+      margin: 40px 0 20px;
+    }
+
+    h1 {
+      font-size: 60px;
+      font-weight: 500;
+      line-height: 1;
+      text-align: center;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      height: 45px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #555;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+    ul {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 10px 10px 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    i {
+      cursor: pointer;
+      margin-right: 10px;
+      color: #ea593e;
+    }
+
+    li {
+      margin-right: auto;
+    }
+
+    .text-muted,
+    .text-muted i {
+      color: #999;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+
+      <header>
+        <h1>To-Do App</h1>
+      </header>
+
+      <form>
+        <label for="toDoItem">Add an item</label>
+        <input id="toDoItem" type="text" placeholder="Remember to take a break...">
+      </form>
+
+      <ul>
+      <!-- To do items get added dynamically here -->
+      </ul>
+
+    </div> <!--../container-->
+  </main>
+
+<script src="https://kit.fontawesome.com/d776406e42.js" crossorigin="anonymous"></script>
+
+<script type="module">
+
+  // Import the functions you need from the SDKs you need
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  import {getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"
+
+  // Your web app's Firebase configuration
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyA34z6JrwPQr4bWNZqWpKJ0uBFe61zXBYQ",
+
+    authDomain: "justin-todo-nov14.firebaseapp.com",
+
+    databaseURL: "https://justin-todo-nov14-default-rtdb.firebaseio.com",
+
+    projectId: "justin-todo-nov14",
+
+    storageBucket: "justin-todo-nov14.appspot.com",
+
+    messagingSenderId: "144322410163",
+
+    appId: "1:144322410163:web:b48d207f772bc4a55ee2c6"
+
+  };
+
+// Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app)
+
+      const dbRef = ref(database);
+
+      const formElement = document.querySelector('form');
+      const ulElement = document.querySelector('ul');
+      
+      // when the user submits their to do - push to Firebase first, then display the todos on the page
+    formElement.addEventListener('submit', function(event) {
+      // When the form is submitted...
+      // don't actually submit the form
+      event.preventDefault();
+      
+      // get the task from the input
+      const inputElement = document.querySelector('input');
+      const task = inputElement.value;
+      
+        // if there is a task...
+      if (task) {  
+
+        // creating an object that stores our todo item (the task variable)
+        const toDoObj = {
+          description: task
+        }
+
+        // add the toDoObj to Firebase
+        push(dbRef, toDoObj);
+
+        displayToDos();
+
+        // add the new list-item element as a child to the unordered list
+        // const ulElement = document.querySelector('ul');
+        // ulElement.appendChild(listItemElement);
+
+        // clear the input field to an empty string
+        inputElement.value = '';
+      }
+
+    });
+
+      // a function that displays our ToDos
+      // this function will be called on page load AND when the user adds a new task
+
+      const displayToDos = () => {
+        // listen for when there are changes in our database
+        onValue(dbRef, (snapshot) => {
+          // storing our database information in a variable
+          const toDoData = snapshot.val()
+          // console.log(toDoData)
+          // create an array that stores our individual todo objects
+          // starting with an empty array
+          const arrayOfToDos = [];
+
+          // use a for in loop to loop over the toDoData object and add each individual object into our new array
+          // "toDo" in this loop is the KEY for each individual object in our larger database object
+          for (let toDo in toDoData) {
+            // add the task as a list-item
+            const listItemElement = document.createElement('li');
+
+            listItemElement.innerHTML = '<i class="far fa-square"></i> ';
+
+            listItemElement.appendChild(document.createTextNode(toDoData[toDo].description));
+
+            arrayOfToDos.push(listItemElement.outerHTML)
+            console.log(arrayOfToDos.join(''))
+          }
+          ulElement.innerHTML = arrayOfToDos.join('');
+          // console.log(ulElement)
+        })
+      }
+
+    ulElement.addEventListener("click", function(event) {
+
+      if (event.target.tagName === 'I') {
+        // tasks to perform
+        updateToDo(event.target);
+      }
+      
+    });
+
+    function updateToDo(iElement) {
+      
+      iElement.classList.toggle('fa-square');
+      iElement.classList.toggle('fa-check-square');
+      iElement.parentElement.classList.toggle('text-muted');
+
+    }
+    // calling this function on page load
+    displayToDos();
+      
+</script>
+</body>
+</html>

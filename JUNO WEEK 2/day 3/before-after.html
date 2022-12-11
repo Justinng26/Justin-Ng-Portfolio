@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 'before' and 'after' should NOT be used to add content, only used stylistically -->
+    <style>
+        p{
+            position: relative;
+        }
+        p::after{
+            content: '"';
+            color: blue;
+            font-size: 12px;
+        }
+        p::before{
+            content:'☃';
+            background: teal;
+            width: 0px;
+            height: 2px;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        p:hover::before {
+            width: 40px;
+        }
+        /* apply transition properties to main element,not hover */
+        /* transition property 'all' applies to all 'hover' values */
+        .box{
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+            transition-property: all;
+            transition-timing-function: ease-in;
+            transition-duration: 1s;
+            transition-delay: 0.2s;
+        }
+        .box:hover{
+            width: 400px;
+            height: 300px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello</p>
+   
+    <div class="box"></div>
+</body>
+</html>

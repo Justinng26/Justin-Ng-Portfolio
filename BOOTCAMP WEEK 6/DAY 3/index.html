@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// let name = "Verna";
+// let age = "72";
+// function phoneCall(number, person) {
+//   console.log("Calling " + number + " for " + person);
+// }
+
+// function callGrandma() {
+//   let phoneNumber = "416-555-4321"; 
+//   phoneCall(phoneNumber, name);
+// }
+
+// callGrandma();
+
+// const character = {
+//   firstName: 'Kermit',
+//   introduction: function() {
+//     console.log(this);
+//     console.log(`Hello! My name is ${this.firstName}.`);
+//   }
+// };
+
+// character.introduction();
+// // this points to the character object
+
+// const gimmeThat = character.introduction;
+//     gimmeThat();
+//     // this now points to the window, the global object.
+
+const indieArtist = function() {
+    console.log("meta commentary", this);
+    // this points to the window object
+}
+
+
+const louvre = {
+    entryFee: "25 euro",
+    galleries: function() {
+        console.log("permanent exhibition", this);
+        // this points to the louvre objects
+
+        const residency = () => {
+    console.log("meta commentary", this);
+    // this points to the window object ??
+        }
+
+        residency();
+    }
+}
+
+louvre.galleries();
+
+// / It would be nice if instead of getting its this value from its supposed execution context on the global object (since we're not using dot notation), the residency function could get its this value from where it is written in the code(ie. from its lexical scope)! Like, nherit it from the galleries function!
+
+
+indieArtist();
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            max-width: 100%;
+            display: block;
+        }
+        .parent{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .children{
+            width: calc(50% - 20px);
+            display: flex;
+            margin: 0 10px;
+        }
+/* margin 0 auto centers everything */
+        
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="children childOne">
+            <img src="https://placebear.com/800/500" alt="bears">
+        </div>
+        <div class="children childTwo"><img src="https://placekitten.com/800/500" alt="cute kitten">
+        </div>
+    </div>
+
+</body>
+</html>

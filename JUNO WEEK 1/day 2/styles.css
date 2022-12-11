@@ -1,0 +1,19 @@
+header{
+    background-color: blue;
+    color: darkgreen;
+}
+li{
+    background-color: aqua;
+
+}
+
+li.home {background-color: blue;}
+
+header{
+    background-color: azure;
+    color: blueviolet;
+}
+ 
+p, h2, header {
+    color: blueviolet;
+}

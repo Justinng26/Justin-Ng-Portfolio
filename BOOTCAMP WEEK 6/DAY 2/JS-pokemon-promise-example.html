@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Promises</title>
+</head>
+<body>
+
+    <h1>Nothing to see here!</h1>
+    <h2>Open up the console => </h2>
+  
+
+    <!-- asynchronous === delivers a 'promise' object -->
+    <!-- 'promise' object that holds data -->
+    <!-- putting 'fetch' into a function -->
+  <script>
+
+    // function getPokemonByNum(number){
+    //   return fetch(`https://pokeapi.co/api/v2/pokemon/${number}`)
+      
+    //   .then((resp)=>{
+    //     return resp.json();
+    //   })
+    //   .then((jsonData)=> {
+    //     return jsonData;
+    //   })
+    // }
+    async function getPokemonByNum(number){
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${number}`);
+      const data = await response.json();
+      return data;
+    }
+
+
+    const pokeBall = [];
+    // each LOOP is a FETCH CALL, returns promises
+    for(let i = 1; i<= 40; i++){
+      pokeBall.push(getPokemonByNum(i));
+    }
+    // when ALL promise have been fulfilled, put it in an array
+    Promise.all(pokeBall)
+    .then(resp =>{
+      console.log(resp)
+    })
+
+    
+    // const urls = ['https://pokeapi.co/api/v2/pokemon/1/', 'https://pokeapi.co/api/v2/pokemon/2/'];
+
+    // const requests = urls.map((url) =>{
+    //   // .map returns new array after callback function and passed into the 'requests' variable.
+    //   return fetch(url)
+    //   .then((resp)=>{
+    //     return resp.json()
+    //   })
+    //   .then((jsonData)=> {
+    //     return jsonData;
+    //   });
+    // })
+    // // console.log(requests);
+
+    // promise.all(requests)
+    // .then((jsonData)=>{
+
+    // })
+    //  const pokemonURL = 'https://pokeapi.co/api/v2/pokemon/1/';
+
+    // async function getPokemon(){
+    //   const myObject = await fetch(pokemonURL);
+
+    //   console.log(myObject);
+    //   const pokemon = await myObject.json();
+    //   return pokemon;
+    // }
+    
+    // need a .then to hold 'pokemon' in 'newPokemon' because of the asyncronous property above. 
+    // getPokemon() IS ASYNCRONOUS, same
+    // getPokemon()
+    //  .then((newPokemon) => {
+    //   console.log(newPokemon.name);
+    //  });
+    
+    
+    
+     //  const myPromise = fetch(pokemonURL);
+    //  console.log(myPromise)
+
+
+    // fetch(pokemonURL)
+    //   .then( (res) => {
+    //     return res.json();
+    //   })
+    //   .then( (jsonData) => {
+    //     console.log(jsonData);
+    //   });
+
+    // console.log('I am not waiting for the API!');
+
+  </script>
+</body>
+</html>
+
+<!-- use 'async' then 'await' becomes available, EXACTLY the same as using .then x2, just wrapping it in a function -->
+<!-- both .then is the same as both 'awaits' -->

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change the Page: JS</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li class="headerMenuItem">
+          <a href="#">About</a>
+        </li>
+        <li class="headerMenuItem">
+          <a href="#">Blog</a>
+        </li>
+        <li class="headerMenuItem">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="headerContent">
+      <h1>Belllissimmo <span>Pizzaa</span></h1>
+      <p>"If your food is good enough, you don't need a nice website."</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Section header here!</h2>
+
+      <div class="subSection">
+        <h3>A smol section!</h3>
+        <p id="special">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="closingParagraph">Sequi beatae repellendus unde laborum et, animi nostrum similique enim quibusdam at temporibus sit dolores earum iure quos laudantium nemo.</p>
+      </div>
+
+      <div class="subSection">
+        <h3>A smol section!</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus obcaecati aperiam cumque harum consequuntur? Blanditiis accusamus praesentium ducimus veniam nemo!</p>
+        <p class="closingParagraph">Ullam, modi voluptatem. Distinctio voluptatibus quis eos consequuntur, itaque voluptatem obcaecati rem explicabo quidem odit soluta aliquam deserunt illo nobis!</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Another section header here!</h2>
+
+      <div class="subSection">
+        <h3>A smol section!</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ipsam laborum id? At, veniam facere eligendi in quam quaerat adipisci.</p>
+        <p class="closingParagraph">Sequi beatae repellendus unde laborum et, animi nostrum similique enim quibusdam at temporibus sit dolores earum iure quos laudantium nemo.</p>
+      </div>
+
+      <div class="subSection">
+        <h3>A smol section!</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus obcaecati aperiam cumque harum consequuntur? Blanditiis accusamus praesentium ducimus veniam nemo!</p>
+        <p class="closingParagraph">Ullam, modi voluptatem. Distinctio voluptatibus quis eos consequuntur, itaque voluptatem obcaecati rem explicabo quidem odit soluta aliquam deserunt illo nobis!</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <nav>
+      <ul>
+        <li class="footerMenuItem">
+          <a href="#">Is anyone</a>
+        </li>
+        <li class="footerMenuItem">
+          <a href="#">Actually reading</a>
+        </li>
+        <li class="footerMenuItem">
+          <a href="#">This.</a>
+        </li>
+        <!-- add a new li here -->
+      </ul>
+    </nav>
+
+    <h6 class="trademark">Maybe the real problem is that you just have a very limited view of what is and isn't good website design.</h6>
+  </footer>
+
+	<script>
+
+  const headerElement = document.querySelector("h1");
+
+  headerElement.addEventListener('click', function() {
+    console.log("wow it clicked!")
+  });
+
+// // Create a new li element
+// const thingy = document.createElement('li');
+
+// // Add content inside that element
+// thingy.innerHTML = "<a href=#>Some text here</a>";
+
+// // Go get the ul inside the footer from the page
+// const footerUl = document.querySelector('footer ul');
+
+// // Append out new li element as the last child of our footer ul
+// footerUl.append(thingy);
+
+	</script>
+</body>
+</html>
+
+
+// CALLBACK FUNCTIONS
+
+        // 1. Passing functions around, variable to variable
+        
+        const number = 666;
+
+        const otherNumber = number;
+
+        console.log(otherNumber);
+        
+        const myFunc = function() {
+          console.log("weeee")
+        }
+
+        myFunc();
+
+
+        // 2. Parameters: Variables that let us define the behavior of values before we have them
+
+        const diffEm = function(some Num, anotherNum) {
+          const difference = someNum - anotherNum;
+          console.log(difference);
+        }
+
+        diffEm(700,34);
+
+        *console.log(666)
+
+        const userFirstNumber = prompt("give a number");
+
+        const userSecondNumber = prompt("another number");
+
+        diffEm(userFirstNumber, userSecondNumber)
+
+        *console.log(666)
+
+        const doChores = function(thingToDo) {
+          console.log(`doing: ${thingToDo}!`);
+          getPaid();
+        }
+  
+        const getPaid = function() {
+          console.log("get money!");
+          console.log("head to the bank!");
+          console.log("turn off part way and donate the money! Fuck capitalism!");
+        }
+
+
+        // 3. Callback functions
+
+        <!-- call back function for single use function, passing definition of a function as a callback function -->
+
+        doChores("say hi to Riley", function() {
+          console.log("Stick face in cat");
+        });

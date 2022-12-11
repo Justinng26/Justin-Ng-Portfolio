@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing With APIs!</title>
+</head>
+
+<body>
+    <h1>Nothing to see here!</h1>
+    <h2>Open your console!</h2>
+    <script>
+
+        // 1. The following API calls are not returning any data! Take a look at the code below and see if you can figure out what's missing:
+        
+        // 1a. BoredAPI documentation: https://www.boredapi.com/documentation
+        
+        const boredUrl = new URL("http://www.boredapi.com/api/activity/")
+        console.log(boredUrl);
+        fetch(boredUrl)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(results){
+            console.log(results);
+        })
+
+        // 1b.Open Library API: https://openlibrary.org/recentchanges.json
+
+        const bookUrl = new URL("https://openlibrary.org/authors.json")
+
+        fetch(bookUrl)
+        .then(function(bookRes){
+            return bookRes.json();
+        })
+        .then(function(bookResults){
+            console.log(bookResults);
+        })
+
+
+        // 2. Please use your assigned API to make at least 3 successful API calls (all API documentation links are listed below)
+        // Try varying the endpoints and/or parameters to get different results returned. Read the documentation thoroughly to make sure you know what to include in your fetch request. 
+        // Note: none of these APIs require a key to access data.
+        // Don't worry about printing anything to the page - simply logging the results to the console is sufficient.
+        // Bonus: for additional practice, pick another API from the list to try out!
+
+        // API documentation links:
+        // 1. Datamuse (https://www.datamuse.com/api/)
+        // 2. Art Institute of Chicago (https://api.artic.edu/docs/#introduction)
+        // 3. Emoji API (https://github.com/cheatsnake/emojihub)
+        // 4. Colors API (https://x-colors.herokuapp.com/)
+        // 5. Open Brewery DB (https://www.openbrewerydb.org/)
+        // 6. TV Maze (https://www.tvmaze.com/api)
+
+
+        
+        const emojiUrl = new URL("https://emojihub.herokuapp.com/api/all/")
+
+        console.log(emojiUrl);
+
+        fetch(emojiUrl)
+        .then(function(response) {
+            // console.log (response)
+            // console.log (response.json())
+            return response.json();
+            
+        })
+        .then(function(jsonResults){
+            const smiley = jsonResults[1].htmlCode;
+            const uniCode = jsonResults[1].unicode;
+
+            console.log(`${smiley} ${uniCode}`);
+        })
+
+        
+    </script>
+</body>
+
+</html>
