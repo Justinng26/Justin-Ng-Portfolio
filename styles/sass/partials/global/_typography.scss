@@ -4,6 +4,10 @@ html{
     font-size: 125%;
 }
 
+h1{
+    margin: 10px;
+}
+
 h1, h2, h3{
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
@@ -32,4 +36,8 @@ h4{
 h5{
     font-family: 'Roboto', sans-serif;
     color: variables.$primary;
+}
+
+.skills p{
+    font-size: 1rem;
 }

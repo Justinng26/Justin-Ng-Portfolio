@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     text-align: initial;
+    padding-bottom: 50px;
     
 }
 
@@ -44,15 +45,22 @@
 
 .skills, footer{
     background: variables.$primary;
+    
 }
 
 .skillsFonts{
     font-size: 70px;
     color: variables.$paleWhite;
+    display: flex;
+    justify-content: center;
 
          i{
             padding: 0 10px;
         }
+}
+
+.icon{
+    padding: 0 15px;
 }
 
 footer{
@@ -70,5 +78,9 @@ footer{
     
     i{
         margin: 0 30px;
+    }
+
+    a{
+        color: black;
     }
 }

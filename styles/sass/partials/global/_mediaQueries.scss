@@ -1,46 +1,18 @@
-@media (max-width:1021px){
-    .projectInfo button{
-        padding: 10px 35px;
-    }
-}
-
-@media (max-width: 977px){
-    .projectInfo button{
-        padding: 10px 30px;
-    }
-}
-
-@media (max-width:933px){
-    .projectInfo button{
-        padding: 10px 25px;
-    }
-}
-
-@media (max-width:889px){
-    .projectInfo button{
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width:844px){
-    .projectInfo button{
-        padding: 10px 150px;
-    }
-}
 
 @media (max-width:800px){
-    .projectInfo button{
-        padding: 10px;
+    .icon{
+        padding: 0 10px;
     }
 }
 
-@media (max-width:755px){
-    .projectInfo button{
-        padding: 5px;
-    }
-}
 
-@media (max-width:711px){
+// @media (max-width:783px){
+//     .skillsFonts{
+//         font-size: 60px;
+//     }
+// }
+
+@media (max-width:750px){
     .projectsFlex{
         flex-wrap: wrap;
     }
@@ -51,11 +23,57 @@
     }
 }
 
+@media (max-width:743px){
+    .skillsFonts{
+        font-size: 60px;
+    }
+}
+
+@media (max-width:697px){
+    .skillsFonts{
+        font-size: 50px;
+    }
+}
+
+@media (max-width:647px){
+    .icon{
+        padding: 0 5px;
+    }
+}
+
+@media (max-width:585px){
+    .skillsFonts{
+        font-size: 45px;
+    }
+}
+
+@media (max-width:569px){
+    .skillsFonts{
+        font-size: 40px;
+    }
+}
+
+@media (max-width:547px){
+    h1, h2{
+        font-size: 2.5rem;
+    }
+    .skills p, p {
+        font-size: 0.9rem;
+    }
+}
+
+
 @media (max-width:550px){
     .project{
       margin: 20px 5px;
     }
   }
+
+  @media (max-width:517px){
+    .skillsFonts{
+        flex-wrap: wrap;
+    }
+}
 
 @media (max-width: 484px){
     .contactFont{
@@ -68,6 +86,18 @@
       font-size: 20px;
     }
   }
+
+@media (max-width: 439px) {
+    .navBar a{
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .skillsFonts{
+        font-size: 70px;
+        display: inline-block;
+    }
+}
 
 @media (max-width: 434px){
     .project{
