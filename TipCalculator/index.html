@@ -1,0 +1,137 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <title>Tip Calculator</title>
+  </head>
+<body>
+    <h1>Tip calculator</h1>
+    <div class="wrapper">
+        <div class="container" id="topContainer">
+          <div class="title">Bill total</div>
+          <div class="inputContainer">
+            <span>$</span>
+            <input
+              onkeyup="calculateBill()"
+              type="text"
+              id="billTotalInput"
+              placeholder="0.00"
+            />
+          </div>
+        </div>
+        <div class="container">
+          <div class="title">Tip</div>
+          <div class="inputContainer">
+            <span>%</span>
+            <input
+              onkeyup="calculateBill()"
+              type="text"
+              id="tipInput"
+              placeholder="10"
+            />
+          </div>
+        </div>
+        <div class="container" id="bottom">
+          <div class="splitContainer">
+            <div class="title">People</div>
+            <div class="controls">
+              <span class="buttonContainer">
+                <button class="splitButton" onclick="increasePeople()">
+                  <span class="buttonText">+</span>
+                </button>
+              </span>
+              <span class="splitAmount" id="numberOfPeople">1</span>
+              <span class="buttonContainer">
+                <button class="splitButton" onclick="decreasePeople()">
+                  <span class="buttonText">-</span>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div class="totalContainer">
+            <div class="title">Total per Person</div>
+            <div class="total" id="perPersonTotal">$0.00</div>
+          </div>
+        </div>
+      </div>
+  
+      <script type="text/javascript" src="./myPlaygroud.js"></script>
+
+</body>
+
+
+
+
+
+
+<!-- <script src="./myPlaygroud.js">
+    const fruits = ['apple', 'orange', 'pear']
+
+
+// for loop variation 
+// fruit refers to items in the array
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+
+// for loop variation
+// doubles numbers array
+
+const numbers = [1,2,3,4,5,6]
+
+const double = (numbers) => {
+    let result = []
+    for (const number of numbers) {
+        result.push(number * 2)
+    }
+    return result
+}
+
+// console.log(double(numbers))
+
+// sum of the array 
+// loop through array, each time return the sum of the indexes of the array. eg. 0+1=1, 1+2=3, 3+3=6, 4=6=10 etc.
+
+const sumArray = (numbers) => {
+    let result = 0;
+    for (const number of numbers) {
+        console.log(number)
+        result += number
+    }
+    return { result }
+}
+
+const nums=  [1,2,3,4]
+console.log(sumArray(nums))
+
+// how may times does the letter occur
+const letterFrequency = (phrase) => {
+    // letterFrequency('haha') = {h:2, a:2}
+    console.log(phrase)
+    // create 'frequency' object
+    let frequency = {}
+    for (const letter of phrase) {
+        // check if letter exists in frequency
+        if(letter in frequency) {
+            // increment value by +1
+            frequency[letter] += 1
+            // otherwise, set the value to 1
+        } else {
+            frequency[letter] = 1 
+        }
+    }
+        return {frequency}
+    
+}
+
+console.log(letterFrequency('hohoho'))
+</script> -->
+</html>
