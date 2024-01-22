@@ -7,8 +7,8 @@
   display: flex;
   list-style: none;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 .navBar ul a {
   margin: -30px;
@@ -40,7 +40,8 @@ footer {
   border-radius: 50%;
 }
 
-.about, .projects {
+.about,
+.projects {
   background: #f8f4f3;
 }
 
@@ -49,8 +50,8 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-align: initial;
   padding-bottom: 50px;
 }
@@ -70,7 +71,8 @@ footer {
   padding: 10px;
 }
 
-.skills, footer {
+.skills,
+footer {
   background: #365c46;
 }
 
@@ -81,8 +83,8 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .skillsFonts i {
   padding: 0 10px;
@@ -90,6 +92,18 @@ footer {
 
 .icon {
   padding: 0 15px;
+}
+
+.icon.typeScript i {
+  letter-spacing: -30px; /* Adjust the value based on your preference */
+}
+
+.icon.typeScript p {
+  margin-right: -40px; /* Adjust the value based on your preference */
+}
+
+.fa-solid fa-s {
+  margin-left: -15px;
 }
 
 footer {
@@ -120,7 +134,12 @@ body {
   margin: 0;
 }
 
-article, aside, footer, header, nav, section {
+article,
+aside,
+footer,
+header,
+nav,
+section {
   display: block;
 }
 
@@ -129,7 +148,9 @@ h1 {
   margin: 0.67em 0;
 }
 
-figcaption, figure, main {
+figcaption,
+figure,
+main {
   display: block;
 }
 
@@ -139,7 +160,7 @@ figure {
 
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -158,18 +179,22 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
-b, strong {
+b,
+strong {
   font-weight: inherit;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
-code, kbd, samp {
+code,
+kbd,
+samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -187,7 +212,8 @@ small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -202,7 +228,8 @@ sup {
   top: -0.5em;
 }
 
-audio, video {
+audio,
+video {
   display: inline-block;
 }
 
@@ -219,31 +246,46 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: sans-serif;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
 }
 
-button, input {
+button,
+input {
   overflow: visible;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-button, html [type=button], [type=reset], [type=submit] {
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -253,7 +295,7 @@ fieldset {
 
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -270,22 +312,25 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox], [type=radio] {
+[type="checkbox"],
+[type="radio"] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -294,7 +339,8 @@ textarea {
   font: inherit;
 }
 
-details, menu {
+details,
+menu {
   display: block;
 }
 
@@ -316,12 +362,14 @@ template {
 
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -333,7 +381,7 @@ html {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -355,7 +403,8 @@ img {
   display: block;
 }
 
-.button, .link {
+.button,
+.link {
   background-color: #db9999;
   font-size: 0.9rem;
   width: 170px;
@@ -370,7 +419,8 @@ img {
   text-align: center;
 }
 
-.button a, .link a {
+.button a,
+.link a {
   color: black;
 }
 
@@ -382,7 +432,9 @@ h1 {
   margin: 10px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Roboto", sans-serif;
   font-size: 3rem;
 }
@@ -398,7 +450,11 @@ p {
   line-height: 1.7;
 }
 
-h1, header p, h3, ul a, footer p {
+h1,
+header p,
+h3,
+ul a,
+footer p {
   color: #f8f4f3;
 }
 
@@ -424,7 +480,7 @@ h5 {
 @media (max-width: 750px) {
   .projectsFlex {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .project {
     width: 100%;
@@ -457,10 +513,12 @@ h5 {
   }
 }
 @media (max-width: 547px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 2.5rem;
   }
-  .skills p, p {
+  .skills p,
+  p {
     font-size: 0.9rem;
   }
 }
@@ -472,7 +530,7 @@ h5 {
 @media (max-width: 517px) {
   .skillsFonts {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 484px) {
